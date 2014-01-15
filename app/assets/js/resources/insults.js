@@ -16,7 +16,6 @@ tumblr.resources.insults = {
 		'go fuck yourself',
 		'go play in traffic',
 		'go to hell',
-		'i hope your asshole prolapses',
 		'kill yourself',
 		'light yourself on fire',
 		'make love to yourself in a furnace',
