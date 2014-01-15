@@ -4,8 +4,8 @@ tumblr.resources.presentations = [
 	'i am part {rawKins}kin/{rawKins}kin with some {rawKins} traits',
 	'i blog about {concepts.awesome}, {concepts.awesome} and {concepts.awesome}',
 	'i identify as a {marginalized.nouns} spirit',
-	'if you think {concepts.terrible} is a good thing please {insults.statements}',
-	'if you\'re a {insults.nouns} please {insults.statements}',
+	'if you think {concepts.terrible} is a good thing then {insults.statements}',
+	'if you\'re a {insults.nouns} then {insults.statements}',
 	'my pronuns are {joinedPronouns} or {joinedPronouns}',
 	'my triggers include {triggers}, {triggers}, {triggers} and {privileged.nouns} elitism',
 ]
