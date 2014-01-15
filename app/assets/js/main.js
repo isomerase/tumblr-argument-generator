@@ -79,8 +79,8 @@ renderBlog = function () {
 	// Add title and presentation
 	title = tumblr.resources.titles.random().replaceTerms()
 	about = [randomAge, '{alignments}', '{politics.nouns}'].join(' / ').replaceTerms()
-	presentation = _.map(_.sample(tumblr.resources.presentations, 3), function (p) {
-		return $('<li>').text(p.replaceTerms())
+	presentation = _.map(_.sample(tumblr.resources.presentations, 5), function (p) {
+		return $('<li>').text(p.replaceTerms().tumblrize() + '.')
 	})
 
 	// Create argument
@@ -124,8 +124,10 @@ renderBlog = function () {
 	}
 
 	$('#title').text(title)
+	$('#username').text('hi, i\'m ' + ownerUsername + '!')
 	$('#about').text(about)
 	$('#presentation').empty().append(presentation)
+	$('#copyright').empty().append('copyright © 2012-' + (new Date().getFullYear()) + ' ' + ownerUsername + '. all rights reserved worldwide. theme by ' + generateUsername() +', modified by ' + ownerUsername + '.')
 	$('#argument').empty().append(argument)
 	$('#hashtags').empty().append(hashtags)
 	$('#reblogs').empty().append(reblogs)

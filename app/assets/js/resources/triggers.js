@@ -1,0 +1,22 @@
+tumblr.resources.triggers = tumblrPrePostfixer([
+	'appearance',
+	'color',
+	'fat',
+	'femininity',
+	'gender',
+	'non-gender',
+	'non-sexuality',
+	'obesity',
+	'sexuality',
+	'thin',
+	'weight loss',
+], [
+	'appropriation',
+	'culture',
+	'exotification',
+	'hate',
+	'labels',
+	'opinions',
+	'shaming',
+	'standards',
+])
