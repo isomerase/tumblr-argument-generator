@@ -154,7 +154,7 @@ String.prototype.replaceTerms = function () {
 				term = tumblr.resources.accessProperty(matchTerm).random()
 			}
 
-			if (typeof form === 'undefined') {
+			if (typeof form === 'undefined' || !form) {
 				form = 1
 			}
 
