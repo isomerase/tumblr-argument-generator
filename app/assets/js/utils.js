@@ -1,14 +1,13 @@
-Array.prototype.random = function (n) {
-	return _.sample(this, n)
-}
-
-Object.prototype.accessProperty = function (path) {
-	var obj = this,
-	    arr = path.split('.')
+var accessProperty = function (obj, path) {
+	var arr = path.split('.')
 
 	while (arr.length && (obj = obj[arr.shift()])) {}
 
 	return obj
+}
+
+Array.prototype.random = function (n) {
+	return _.sample(this, n)
 }
 
 String.prototype.randomRepeat = function (to, from) {
@@ -140,18 +139,18 @@ String.prototype.replaceTerms = function () {
 
 		// Sample terms and store in index
 		_.forEach(termCount, function (count, term) {
-			var termDict = tumblr.resources.accessProperty(term)
+			var termDict = accessProperty(tumblr.resources, term)
 
 			termIndex[term] = _.sample(termDict, count)
 		})
 
 		// Replace terms from index
 		text = text.replace(re, function (m, matchTerm, formFull, form) {
-			term = termIndex[matchTerm].pop()
+			var term = termIndex[matchTerm].pop()
 
 			if (typeof term === 'undefined') {
 				// This may happen if there are too few terms, in that case sample random term instead
-				term = tumblr.resources.accessProperty(matchTerm).random()
+				term = accessProperty(tumblr.resources, matchTerm).random()
 			}
 
 			if (typeof form === 'undefined' || !form) {

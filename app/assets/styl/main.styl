@@ -127,10 +127,13 @@ strong
 		transform: translate(-50%, -50%)
 
 #controls
-	background: #fff
+	background: linear-gradient(top, rgba(#333, .9), rgba(#000, .9))
+	border-bottom: 1px solid #000
+	color: #fff
+	text-shadow: 0 1px 1px rgba(#000, .8)
 	display: block
 	text-align: center
-	box-shadow: 0 5px 10px rgba(#000, .5)
+	box-shadow: 0 5px 10px rgba(#000, .3)
 	position: fixed
 	top: 0
 	left: 0
@@ -138,44 +141,37 @@ strong
 	z-index: 10
 	height: 60px
 	line-height: 60px
-	&:before,
-	&:after
-		font-size: 18px
-	&:before
-		content: '▶▶▶ '
-	&:after
-		content: ' ◀◀◀'
+	font-weight: bold
+	span
+		&:after
+			margin: 0 10px
+			content: '▶▶▶'
 	button
-		background: linear-gradient(top, #eee, #ddd)
 		border: 1px solid
-		border-color: #ccc #bbb #bbb #ccc
+		color = #b32
+		background: linear-gradient(top, color, darken(color, 15))
+		border-color: lighten(color, 5) darken(color, 25) darken(color, 25) lighten(color, 5)
 		border-radius: 5px
 		cursor: pointer
 		font: bold 16px/1.5 font-main
 		outline: none
 		padding: 8px 40px
 		margin: 0 10px
-		transition: all .1s linear
-		text-shadow: 0 1px 0 rgba(#fff, .5)
+		color: #fff
+		text-shadow: 0 1px 0 rgba(#000, .8)
+		box-shadow: 0 3px 8px rgba(#000, .5)
 		&:hover
-			background: linear-gradient(top, darken(#fff, 3), darken(#eee, 3))
+			background: linear-gradient(top, lighten(color, 15), color)
+			border-color: lighten(color, 20) darken(color, 5) darken(color, 5) lighten(color, 20)
 			opacity: 1 !important
 		&:active
-			background: linear-gradient(top, #ddd, #eee)
-			border-color: #aaa #ccc #ccc #aaa
-		&.generate-blog
-			background: linear-gradient(top, #7c5, #6b4)
-			border-color: #6a4 #371 #371 #6a4
-			&:hover
-				background: linear-gradient(top, #8d6, #7c5)
-			&:active
-				background: linear-gradient(top, #7c5,#8d6)
-				border-color: #371 #6a4 #6a4 #371
+			background: linear-gradient(top, color, lighten(color, 15))
+			border-color: darken(color, 5) lighten(color, 20) lighten(color, 20) darken(color, 5)
 
 #footer
-	margin: 10px 0 0 0
+	margin: 10px 0
 	text-align: center
-	color: rgba(#000, .4)
+	color: rgba(#000, .6)
 
 #forkme
 	position: fixed

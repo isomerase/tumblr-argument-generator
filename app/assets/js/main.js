@@ -132,22 +132,28 @@ renderBlog = function () {
 	$('#hashtags').empty().append(hashtags)
 	$('#reblogs').empty().append(reblogs)
 
-	if ($('body').css('background-image').indexOf(window.currentBackgroundImage) === -1) {
-		$('body').css('background-image', 'url(static/img/bg/' + window.currentBackgroundImage + ')')
-	}
+	// Update to a random background image
+	$('body').css('background-image', 'url(static/img/bg/' + tumblr.resources.images.backgrounds.random() + ')')
 }
 
 $(document).ready(function () {
-	// Randomly switch background every now and then
-	window.currentBackgroundImage = tumblr.resources.images.backgrounds.random()
-	window.setInterval(function () { window.currentBackgroundImage = tumblr.resources.images.backgrounds.random() }, 4000)
+	var headerAnim
 
 	// Add some stats
 	$('.privileged-groups-length').text(' ' + (tumblr.resources.privileged.adjectives.length * tumblr.resources.privileged.nouns.length) + ' ')
 	$('.marginalized-groups-length').text(' ' + (tumblr.resources.marginalized.nouns.length * tumblr.resources.marginalized.verbs.length) + ' ')
 
+	// Highlight the header
+	headerAnim = function () {
+		$('#controls span')
+			.animate({opacity: 1}, 500)
+			.animate({opacity: 0.6}, 500)
+			.animate({opacity: 1}, 500)
+			.animate({opacity: 1}, 1000, headerAnim)
+	}
+	headerAnim()
+
 	renderBlog()
-	renderInsult()
 
 	$('#controls button.generate-insult').click(function () {
 		$('#insult').show()
