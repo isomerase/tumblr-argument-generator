@@ -23,7 +23,7 @@ generateInsult = function (initialInsult) {
 
 	insult += '{privileged.nouns}-{privileged.adjectives} {insults.nouns}'
 
-	return insult
+	return insult.replaceTerms()
 }
 
 generateParagraph = function (mangleGrammar, minLength, maxRandom) {
@@ -67,7 +67,7 @@ generateUsername = function() {
 renderInsult = function () {
 	$('#insult')
 		.empty()
-		.append($('<p>').text(generateInsult(true).replaceTerms().tumblrize(Math.random() > 0.8).toUpperCase()))
+		.append($('<p>').text(generateInsult(true).tumblrize(false).toUpperCase()))
 }
 
 renderBlog = function () {
@@ -93,7 +93,7 @@ renderBlog = function () {
 				.attr('class', 'reply')
 				.text(Math.random() > 0.6 ?
 				      generateParagraph(Math.random() > mangleChance) :
-				      (generateInsult(true) + '!').replaceTerms().tumblrize(Math.random() > mangleChance))
+				      (generateInsult(true) + '!').tumblrize(Math.random() > mangleChance))
 		)
 	}
 
@@ -113,7 +113,7 @@ renderBlog = function () {
 		if (Math.random() > 0.7) {
 			reblogContainer
 				.append($('<span>').attr('class', 'reblog').text(' reblogged this from ' + ownerUsername + ' and added:'))
-				.append($('<p>').attr('class', 'insult').text((generateInsult(true) + '!').replaceTerms().tumblrize(true)))
+				.append($('<p>').attr('class', 'insult').text((generateInsult(true) + '!').tumblrize(true)))
 		}
 		else {
 			reblogContainer
