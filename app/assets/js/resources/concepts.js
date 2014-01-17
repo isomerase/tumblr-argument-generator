@@ -1,6 +1,7 @@
 tumblr.resources.concepts = {
 	awesome: [
 		'activism',
+		'anti-porn activism',
 		'bodily integrity',
 		'communism',
 		'egalitarianism',

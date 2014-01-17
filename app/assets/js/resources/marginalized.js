@@ -27,6 +27,7 @@ tumblr.resources.marginalized = {
 		'QTPOC',
 		'WoC',
 		'ace',
+		'ally',
 		'androphilia',
 		'appearance',
 		'asian',

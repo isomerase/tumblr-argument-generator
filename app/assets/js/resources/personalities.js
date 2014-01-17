@@ -1,5 +1,6 @@
 tumblr.resources.personalities = tumblrPrePostfixer([
 	'aligned',
+	'associating',
 	'identifying',
 	'type',
 	'supporting',
@@ -7,4 +8,5 @@ tumblr.resources.personalities = tumblrPrePostfixer([
 	'individuals',
 	'people',
 	'personalities',
+	'spirits',
 ])
