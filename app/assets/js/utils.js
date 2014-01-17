@@ -52,7 +52,8 @@ String.prototype.tumblrize = function (mangleGrammar) {
 		text = text.replace(/you're/g, 'ur')
 		text = text.replace(/you/g, 'u')
 		text = text.replace(/people/g, 'ppl')
-		text = text.replace(/please/g, 'plz')
+		text = text.replace(/\bare\b/g, 'r')
+		text = text.replace(/\bplease\b/g, 'plz')
 		text = text.replace(/\bhate\b/g, 'h8')
 		text = text.replace(/\bto\b/g, '2')
 		text = text.replace(/\bthe\b/g, function () {
@@ -166,6 +167,11 @@ String.prototype.replaceTerms = function () {
 
 		i += 1
 	}
+
+	// Correct a/an
+	text = text.replace(/\ba ([aeiouy])/gi, function (m, p1) {
+		return 'an ' + p1
+	})
 
 	return text.toString()
 }
