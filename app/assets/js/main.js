@@ -78,7 +78,7 @@ renderBlog = function () {
 
 	// Add title and presentation
 	title = tumblr.resources.titles.random().replaceTerms()
-	about = [randomAge, '{alignments}', '{politics.nouns}'].join(' / ').replaceTerms()
+	about = [randomAge, '{alignments}', '{politics.nouns}', '{politics.nouns}', '{politics.nouns}'].join(' / ').replaceTerms()
 	presentation = _.map(_.sample(tumblr.resources.presentations, 5), function (p) {
 		return $('<li>').text(p.replaceTerms().tumblrize() + '.')
 	})
@@ -101,7 +101,7 @@ renderBlog = function () {
 	$(_.sample(argument.find('.reply'))).empty().append($('<img>').attr('src', 'static/img/inline/' + tumblr.resources.images.inline.random()))
 
 	// Add hashtags
-	_.forEach(_.sample(tumblr.resources.concepts.awesome, 5 + Math.floor(Math.random() * 3)), function (concept) {
+	_.forEach(_.sample(tumblr.resources.concepts.awesome, 3 + Math.floor(Math.random() * 3)), function (concept) {
 		hashtags.push($('<li>').text('#' + concept))
 	})
 
