@@ -7,7 +7,7 @@ tumblr.resources.intros = [
 	'i\'m going to get hate for this but',
 	'just a friendly reminder:',
 	'let me make this abundantly clear:',
-	'no. just. no.',
+	'no. just no.',
 	'oh. my. god.',
 	'omg',
 	'please stop.',

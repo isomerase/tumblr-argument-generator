@@ -14,6 +14,7 @@ tumblr.resources.privileged = {
 		'thin',
 		'uterus-bearer',
 		'white',
+		'white womyn',
 	],
 	adjectives: [
 		'normative',

@@ -14,7 +14,7 @@ generateInsult = function (initialInsult) {
 			insult += '{insults.adjectives} '
 		}
 		if (Math.random() > 0.3) {
-			insult += '{marginalized.nouns}-{marginalized.verbs}, '
+			insult += '{marginalized.nouns|marginalized.adjectives}-{marginalized.verbs}, '
 		}
 	}
 	else {
@@ -141,7 +141,7 @@ $(document).ready(function () {
 
 	// Add some stats
 	$('.privileged-groups-length').text(' ' + (tumblr.resources.privileged.adjectives.length * tumblr.resources.privileged.nouns.length) + ' ')
-	$('.marginalized-groups-length').text(' ' + (tumblr.resources.marginalized.nouns.length * tumblr.resources.marginalized.verbs.length) + ' ')
+	$('.marginalized-groups-length').text(' ' + ((tumblr.resources.marginalized.nouns.length + tumblr.resources.marginalized.adjectives.length) * tumblr.resources.marginalized.verbs.length) + ' ')
 
 	// Highlight the header
 	headerAnim = function () {

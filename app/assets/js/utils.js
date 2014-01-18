@@ -1,9 +1,32 @@
-var accessProperty = function (obj, path) {
+var accessProperty, pluralize
+
+accessProperty = function (obj, path) {
 	var arr = path.split('.')
 
 	while (arr.length && (obj = obj[arr.shift()])) {}
 
+	if (typeof obj === 'undefined') {
+		console.warn('Undefined property path "' + path + '", object: ', obj)
+	}
+
 	return obj
+}
+
+pluralize = function (noun) {
+	var exceptions = ['womyn', 'wymyn']
+	if (exceptions.indexOf(noun) !== -1) {
+		return noun
+	}
+	if (noun.search(/man$/gi) !== -1) {
+		return noun.replace(/man$/, 'men')
+	}
+	if (noun.search(/y$/gi) !== -1) {
+		return noun.slice(0, noun.length - 1) + 'ies'
+	}
+	if (noun.search(/[xs]$/gi) !== -1) {
+		return noun + 'es'
+	}
+	return noun + 's'
 }
 
 Array.prototype.random = function (n) {
@@ -117,7 +140,7 @@ String.prototype.tumblrize = function (mangleGrammar) {
 }
 
 String.prototype.replaceTerms = function () {
-	var re = /\{([a-z\.]+)(:([0-9]+))?\}/gi,
+	var re = /\{([a-z\.\|]+)(:([0-9]+))?(\?([0-9]+))?\}/gi,
 	    text = this,
 	    i = 0,
 	    termCount, termIndex
@@ -129,25 +152,42 @@ String.prototype.replaceTerms = function () {
 		// Make index of unique terms to avoid repetition
 		// First index how many terms we should sample
 		_.forEach(text.match(re), function (item) {
-			var termKey = item.match(/[a-z\.]+/i)[0]
+			var termKey = item.match(/[a-z\.\|]+/i)[0],
+			    repeat = /\?([0-9]+)/gi.exec(item),
+			    count = 1
 
-			if (!termCount.hasOwnProperty(termKey)) {
-				termCount[termKey] = 1
+			if (repeat) {
+				count += repeat[1]
 			}
 
-			termCount[termKey] += 1
+			if (!termCount.hasOwnProperty(termKey)) {
+				termCount[termKey] = count
+			}
+			else {
+				termCount[termKey] += count
+			}
 		})
 
 		// Sample terms and store in index
 		_.forEach(termCount, function (count, term) {
-			var termDict = accessProperty(tumblr.resources, term)
+			// Terms are split by | and randomly selected
+			var termDict = accessProperty(tumblr.resources, term.split('|').random())
 
 			termIndex[term] = _.sample(termDict, count)
 		})
 
 		// Replace terms from index
-		text = text.replace(re, function (m, matchTerm, formFull, form) {
-			var term = termIndex[matchTerm].pop()
+		text = text.replace(re, function (m, matchTerm, formFull, form, repeatFull, repeat) {
+			repeat = repeat ? Math.floor(Math.random() * repeat) + 1 : 1
+
+			var term = termIndex[matchTerm].splice(0, repeat), last
+
+			if (term.length > 1) {
+				last = term.pop()
+				term = [term.join(', ') + ' and ' + last]
+			}
+
+			term = term[0]
 
 			if (typeof term === 'undefined') {
 				// This may happen if there are too few terms, in that case sample random term instead
