@@ -70,7 +70,8 @@ tumblr.resources.concepts = {
 		'rape culture',
 		'sexuality labels',
 		'white feminism',
-		'white opinions',
 		'{privileged.nouns} privilege',
+		'{privileged.nouns} supremacy',
+		'{privileged.nouns} kyriarchy',
 	].concat(tumblr.resources.discriminations),
 }

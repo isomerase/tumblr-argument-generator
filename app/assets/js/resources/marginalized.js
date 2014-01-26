@@ -18,6 +18,7 @@ tumblr.resources.marginalized = {
 		['sexualize', 'sexualizing', 'sexualization'],
 		['shame', 'shaming', 'shaming'],
 		['stare-rape', 'stare-raping', 'stare-raping'],
+		['erase', 'erasing', 'erasure'],
 	],
 	nouns: [
 		'CAFAB',

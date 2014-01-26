@@ -90,8 +90,11 @@ tumblr.resources.insults = {
 		'scum',
 		'sexist',
 		'subhuman',
+		'shitlord',
+		'shitstain',
 		'traditionalist',
 		'transmisogynist',
+		'troll',
 		'virgin',
 	],
 }
