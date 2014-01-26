@@ -55,6 +55,9 @@ module.exports = function (grunt) {
 					'webroot/static/css/main.css': [
 						'app/assets/styl/main.styl',
 					],
+					'webroot/static/css/1.css': [
+						'app/assets/styl/1.styl',
+					],
 				}],
 			},
 		},
