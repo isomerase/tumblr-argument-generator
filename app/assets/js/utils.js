@@ -1,4 +1,4 @@
-var accessProperty, pluralize
+var accessProperty, pluralize, randomStyle
 
 accessProperty = function (obj, path) {
 	var arr = path.split('.')
@@ -27,6 +27,17 @@ pluralize = function (noun) {
 		return noun + 'es'
 	}
 	return noun + 's'
+}
+
+randomStyle = function () {
+	var linkTags = document.getElementsByTagName('link'), styleList = [], i
+	for (i = 0; i < linkTags.length; i += 1) {
+		if (linkTags[i].title.indexOf('randomstyle') >= 0) {
+			linkTags[i].disabled = true
+			styleList.push(linkTags[i])
+		}
+	}
+	styleList[Math.floor(Math.random() * styleList.length)].disabled = false
 }
 
 Array.prototype.random = function (n) {

@@ -62,6 +62,8 @@ renderInsult = function () {
 }
 
 renderBlog = function () {
+	randomStyle()
+
 	var randomAge = 13 + Math.floor(Math.random() * 10),
 	    ownerUsername = generateUsername(),
 	    mangleChance = 1 - 0.2,
