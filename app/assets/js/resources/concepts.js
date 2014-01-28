@@ -65,7 +65,7 @@ tumblr.resources.concepts = {
 		'misandry',
 		'multiplicity',
 		'obesity',
-		'prosthetic',
+		'prosthetic-wearers',
 		'social justice',
 		'socialism',
 		'stretchmark',

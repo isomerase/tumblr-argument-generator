@@ -30,6 +30,7 @@ tumblr.resources.marginalized = {
 		'ace',
 		'agnostic',
 		'ally',
+		'amputee',
 		'atheist',
 		'cross-dresser',
 		'equalist',

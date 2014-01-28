@@ -25,7 +25,6 @@ module.exports = function (grunt) {
 				src: [
 					'app/assets/js/header.js',
 					'app/assets/js/utils.js',
-					'app/assets/js/resources/adverbs.js',
 					'app/assets/js/resources/alignments.js',
 					'app/assets/js/resources/privileged.js',
 					'app/assets/js/resources/concepts.js',

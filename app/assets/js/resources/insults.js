@@ -74,6 +74,7 @@ tumblr.resources.insults = {
 		'femscum',
 		'hitler',
 		'kyriarchist',
+		'loser',
 		'lowlife',
 		'misogynist',
 		'mouthbreather',
@@ -95,6 +96,7 @@ tumblr.resources.insults = {
 		'traditionalist',
 		'transmisogynist',
 		'troll',
+		'truscum',
 		'virgin',
 	],
 }
