@@ -39,7 +39,7 @@ tumblr.resources.ists = tumblrPrePostfixer([
 	'masculinist',
 	'misandrist',
 	'nihilist',
-	'nihilist',
+	'nationalist',
 	'socialist',
 	'womanist',
 ])

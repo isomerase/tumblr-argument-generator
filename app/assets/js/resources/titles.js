@@ -1,4 +1,7 @@
 tumblr.resources.titles = [
+	'erasing {concepts.terrible}',
+	'fighting {concepts.terrible}',
+	'social justice and {concepts.awesome}',
 	'this is social justice',
 	'this is {privileged.nouns} privilege',
 	'{marginalized.nouns} microaggressions',

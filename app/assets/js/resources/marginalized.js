@@ -5,7 +5,9 @@ tumblr.resources.marginalized = {
 		['dehumanize', 'dehumanizing', 'dehumanization'],
 		['deny', 'denying', 'denial'],
 		['discriminate', 'discriminating', 'discrimination'],
+		['erase', 'erasing', 'erasure'],
 		['exotify', 'exotifying', 'exotification'],
+		['exploit', 'exploiting', 'exploitation'],
 		['fetishize', 'fetishizing', 'fetishization'],
 		['harass', 'harassing', 'harassment'],
 		['hypersexualize', 'hypersexualizing', 'hypersexualization'],
@@ -95,5 +97,6 @@ tumblr.resources.marginalized = {
 		'trans*',
 		'transabled',
 		'two-spirit',
+		'underprivileged',
 	].concat(tumblr.resources.alignments),
 }

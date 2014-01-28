@@ -9,6 +9,30 @@ tumblr.resources.discriminations = tumblrPrePostfixer([
 	'oppression',
 ])
 
+tumblr.resources.supremacies = tumblrPrePostfixer(tumblr.resources.privileged.nouns, [
+	'culture',
+	'domination',
+	'entitlement',
+	'feminism',
+	'kyriarchy',
+	'opinions',
+	'privilege',
+	'rights',
+	'superiority',
+	'supremacy',
+])
+
+tumblr.resources.institutions = tumblrPrePostfixer([
+	'institutionalized',
+	'internalized',
+], [
+	'gender roles',
+	'masculinity',
+	'misogynism',
+	'patriarchy',
+	'racism',
+])
+
 tumblr.resources.concepts = {
 	awesome: [
 		'activism',
@@ -53,24 +77,16 @@ tumblr.resources.concepts = {
 		'bindi wearing',
 		'colonization',
 		'cultural appropriation',
-		'female self esteem erosion',
 		'exotification',
+		'female self esteem erosion',
 		'gender equality',
 		'gender roles',
 		'hypermasculinity',
-		'institutionalized racism',
-		'internalized misogynism',
-		'internalized patriarchy',
 		'labeling',
-		'male domination',
-		'male entitlement',
 		'masculinity',
 		'men\'s rights',
 		'patriarchal beauty standards',
 		'rape culture',
 		'sexuality labels',
-		'white feminism',
-		'white opinions',
-		'{privileged.nouns} privilege',
-	].concat(tumblr.resources.discriminations),
+	].concat(tumblr.resources.discriminations, tumblr.resources.supremacies, tumblr.resources.institutions),
 }
