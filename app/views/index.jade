@@ -12,7 +12,8 @@ html(lang='en')
 		title This is Social Justice - SJW Blog and Argument Generator
 
 		link(rel='stylesheet', href='static/css/main.css', type='text/css')
-
+		- for (var i=1; i<=3; i++)
+			link(rel='stylesheet', href='static/css/' + i + '.css', type='text/css', title='randomstyle-' + i)
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js')
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js')
 		script(src='static/js/main.js')

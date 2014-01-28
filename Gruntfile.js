@@ -27,6 +27,7 @@ module.exports = function (grunt) {
 					'app/assets/js/utils.js',
 					'app/assets/js/resources/*.js',
 					'app/assets/js/main.js',
+					'app/assets/js/randomstyle.js',
 				],
 				dest: 'app/assets/js/merged.js',
 			},
@@ -54,6 +55,15 @@ module.exports = function (grunt) {
 				files: [{
 					'webroot/static/css/main.css': [
 						'app/assets/styl/main.styl',
+					],
+					'webroot/static/css/1.css': [
+						'app/assets/styl/1.styl',
+					],
+					'webroot/static/css/2.css': [
+						'app/assets/styl/2.styl',
+					],
+					'webroot/static/css/3.css': [
+						'app/assets/styl/3.styl',
 					],
 				}],
 			},
