@@ -38,34 +38,12 @@ String.prototype.randomRepeat = function (to, from) {
 	return (new Array(Math.floor(Math.random() * (to - from + 1) + from) + 1)).join(this)
 }
 
-String.prototype.literalize = function () {
-	var text = this
-
-	text = text.replace(/you are/g, function () {
-		return (Math.random() > 0.2 ? 'you\'re literally' : 'you\'re')
-	})
-	text = text.replace(/i am/g, function () {
-		return (Math.random() > 0.2 ? 'i\'m literally' : 'i\'m')
-	})
-	text = text.replace(/ will/g, function () {
-		return (Math.random() > 0.2 ? '\'ll literally' : '\'ll')
-	})
-	text = text.replace(/it is/g, function () {
-		return (Math.random() > 0.2 ? 'it\'s literally' : 'it\'s')
-	})
-
-	return text.toString()
-}
-
 String.prototype.tumblrize = function (mangleGrammar) {
 	var text = this
 
 	if (typeof mangleGrammar === 'undefined') {
 		mangleGrammar = false
 	}
-
-	// Randomly make stuff literal
-	text = text.literalize()
 
 	// Replace "and" with ampersand
 	text = text.replace(/\band\b/g, '&')
@@ -140,11 +118,21 @@ String.prototype.tumblrize = function (mangleGrammar) {
 }
 
 String.prototype.replaceTerms = function () {
-	var re = /\{([a-z\.\|]+)(:([0-9]+))?(\?([0-9]+))?\}/gi,
+	var re = /\{([a-z\.\|]+)(:([0-9]+))?(\?([0-9]+))?(\#([a-z]+))?\}/gi,
 	    text = this,
 	    i = 0,
 	    termCount, termIndex
 
+	// Handle inline terms
+	text = text.replace(/\[(.+?)\]/gi, function (m, terms) {
+		terms = terms.split('|')
+		if (terms.length === 1) {
+			terms.push('')
+		}
+		return terms.random()
+	})
+
+	// Handle dictionary terms
 	while (text.search(re) !== -1 && i < 5) {
 		termCount = {}
 		termIndex = {}
@@ -177,7 +165,7 @@ String.prototype.replaceTerms = function () {
 		})
 
 		// Replace terms from index
-		text = text.replace(re, function (m, matchTerm, formFull, form, repeatFull, repeat) {
+		text = text.replace(re, function (m, matchTerm, formFull, form, repeatFull, repeat, modifierFull, modifier) {
 			repeat = repeat ? Math.floor(Math.random() * repeat) + 1 : 1
 
 			var term = termIndex[matchTerm].splice(0, repeat), last
@@ -200,6 +188,10 @@ String.prototype.replaceTerms = function () {
 
 			if (typeof term === 'object') {
 				term = term[form]
+			}
+
+			if (typeof modifier !== 'undefined' && window.hasOwnProperty(modifier)) {
+				term = window[modifier](term)
 			}
 
 			return term

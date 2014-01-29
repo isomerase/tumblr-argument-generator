@@ -10,6 +10,7 @@ tumblr.resources.alignments = tumblrPrePostfixer([
 ], [
 	'amorous',
 	'romantic',
+	'sensual',
 	'sexual',
 ], '').concat(tumblrPrePostfixer([
 	'a',
@@ -29,6 +30,7 @@ tumblr.resources.alignments = tumblrPrePostfixer([
 	'queer',
 	'racial',
 	'romantic',
+	'sensual',
 	'sexual',
 	'species',
 ], ''))

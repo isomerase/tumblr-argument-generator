@@ -28,39 +28,30 @@ generateInsult = function (initialInsult) {
 
 generateParagraph = function (mangleGrammar, minLength, maxRandom) {
 	var paragraph = [],
-	    length = Math.round((typeof minLength === 'undefined' ? 3 : minLength) + Math.random() * (typeof maxRandom === 'undefined' ? 5 : maxRandom)),
-	    dist = {
-		    insult: Math.round(0.2 * length),
-		    statement: Math.round(0.8 * length),
-	    }, i
+	    length = Math.round((typeof minLength === 'undefined' ? 3 : minLength) + Math.random() * (typeof maxRandom === 'undefined' ? 5 : maxRandom))
 
-	for (i = 0; i < dist.insult; i += 1) {
-		paragraph.push(generateInsult(Math.random() > 0.3) + '!')
-	}
-
-	paragraph = paragraph.concat(_.map(_.sample(tumblr.resources.statements, dist.statement), function (val) {
-		if (Math.random() > 0.5) {
-			return val
+	paragraph = _.map(_.sample(tumblr.resources.statements, length), function (val) {
+		if (! val[1] || Math.random() > 0.7) {
+			return val[0]
 		}
-		var text = val.slice(0, -1),
-		    punc = val.slice(-1)
+
+		var text = val[0].slice(0, -1),
+		    punc = val[0].slice(-1)
 
 		// Randomly add some extra insults to statements
-		return text + (' you ' + (Math.random() > 0.3 ? '{insults.adjectives} ' : '') + '{insults.nouns}') + punc
-	}))
-
-	paragraph = _.shuffle(paragraph)
+		return text + ', ' + generateInsult(false) + punc
+	})
 
 	paragraph[0] = '{intros} ' + paragraph[0]
 
 	if (Math.random() > 0.5) {
-		paragraph.push('{conclusions} {insults.statements}')
+		paragraph.push('{conclusions} {insults.statements}!')
 	}
 
 	return paragraph.join(' ').replaceTerms().tumblrize(mangleGrammar)
 }
 
-generateUsername = function() {
+generateUsername = function () {
 	return '{marginalized.nouns}'.randomRepeat(2, 2).replaceTerms().toLowerCase().replace(/[^a-z]/g, '')
 }
 
@@ -74,7 +65,7 @@ renderBlog = function () {
 	randomStyle();
 	var randomAge = 13 + Math.floor(Math.random() * 10),
 	    ownerUsername = generateUsername(),
-	    mangleChance = 0.4,
+	    mangleChance = 1 - 0.2,
 	    i, title, about, presentation, argument, reblogs = [], reblogContainer, hashtags = []
 
 	// Add title and presentation
