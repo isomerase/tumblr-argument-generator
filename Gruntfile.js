@@ -46,7 +46,6 @@ module.exports = function (grunt) {
 					'app/assets/js/resources/titles.js',
 					'app/assets/js/resources/triggers.js',
 					'app/assets/js/main.js',
-					'app/assets/js/randomstyle.js',
 				],
 				dest: 'app/assets/js/merged.js',
 			},
