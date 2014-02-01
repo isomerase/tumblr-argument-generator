@@ -149,10 +149,12 @@ $(document).ready(function () {
 	renderBlog()
 
 	$('#controls button.generate-insult').click(function () {
+		$('#contents').hide()
 		$('#insult').show()
 		renderInsult()
 	})
 	$('#controls button.generate-blog').click(function () {
+		$('#contents').show()
 		$('#insult').hide()
 		renderBlog()
 	})
