@@ -8,7 +8,7 @@ tumblr.resources.privileged = {
 		'gender',
 		'hetero',
 		'male',
-		'middle-class',
+		'middle class',
 		'non-ethnic',
 		'smallfat',
 		'thin',

@@ -3,6 +3,7 @@ tumblr.resources.alignments = tumblrPrePostfixer([
 	'anthro',
 	'demi',
 	'gender',
+	'gray',
 	'gyne',
 	'pomo',
 	'skolio',
@@ -10,6 +11,7 @@ tumblr.resources.alignments = tumblrPrePostfixer([
 ], [
 	'amorous',
 	'romantic',
+	'platonic',
 	'sensual',
 	'sexual',
 ], '').concat(tumblrPrePostfixer([
