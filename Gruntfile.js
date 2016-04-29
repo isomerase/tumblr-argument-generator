@@ -34,7 +34,6 @@ module.exports = function (grunt) {
 					'app/assets/js/resources/images.js',
 					'app/assets/js/resources/insults.js',
 					'app/assets/js/resources/intros.js',
-					'app/assets/js/resources/kins.js',
 					'app/assets/js/resources/marginalized.js',
 					'app/assets/js/resources/personalities.js',
 					'app/assets/js/resources/phobias.js',
