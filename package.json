@@ -16,9 +16,11 @@
 		"uglify-js": "*",
 
 		"grunt": "*",
+		"grunt-contrib-concat": "*",
 		"grunt-contrib-jade": "*",
-		"grunt-contrib-requirejs": "*",
+		"grunt-contrib-uglify": "*",
 		"grunt-contrib-stylus": "*",
+		"grunt-sync": "*",
 		"matchdep": "*"
 	},
 	"engines": {

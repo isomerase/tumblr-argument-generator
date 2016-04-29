@@ -1,0 +1,17 @@
+tumblr.resources.intros = [
+	'[TW: rant]',
+	'[TW: words]',
+	'can we talk about this?',
+	'first off:',
+	'for the love of god.',
+	'i\'m going to get hate for this but',
+	'just a friendly reminder:',
+	'let me make this abundantly clear:',
+	'no. just no.',
+	'oh. my. god.',
+	'omg',
+	'please stop.',
+	'seriously?',
+	'this. is. NOT. okay.',
+	'wow. just. wow.',
+]
