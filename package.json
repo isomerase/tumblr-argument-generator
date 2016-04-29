@@ -7,7 +7,7 @@
 	"main": "./app/main",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Lokaltog/tumblr-argument-generator.git"
+		"url": "https://github.com/isomerase/tumblr-argument-generator.git"
 	},
 	"dependencies" : {
 		"jade": "*",
@@ -21,7 +21,8 @@
 		"grunt-contrib-uglify": "*",
 		"grunt-contrib-stylus": "*",
 		"grunt-sync": "*",
-		"matchdep": "*"
+		"matchdep": "*",
+		"grunt-gh-pages": "*"
 	},
 	"engines": {
 		"node": ">=0.10"

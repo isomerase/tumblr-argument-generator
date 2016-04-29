@@ -95,10 +95,19 @@ module.exports = function (grunt) {
 				}],
 			},
 		},
+		'gh-pages': {
+		    all: {
+                options: {
+                  base: 'webroot'
+                },
+                src: ['**']
+            },
+        },
 	})
 
 	grunt.registerTask('production', [
 		'jade:production',
+		'gh-pages',
 		'concat:production',
 		'uglify:production',
 		'stylus:production',
