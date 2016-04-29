@@ -1,5 +1,7 @@
 tumblr.resources.discriminations = tumblrPrePostfixer([
 	'appearance',
+	'age',
+	'gender',
 	'attractiveness',
 	'height',
 	'weight',
@@ -39,6 +41,7 @@ tumblr.resources.concepts = {
 		'anti-porn activism',
 		'bodily integrity',
 		'body hair',
+		'critical engagement',
 		'communism',
 		'diversity',
 		'dysphoria',
@@ -59,6 +62,7 @@ tumblr.resources.concepts = {
 		'gender neutrality',
 		'gender-neutral pronouns',
 		'intersectionality',
+		'intersectional feminism',
 		'invisibility',
 		'lesbianism',
 		'misandry',
