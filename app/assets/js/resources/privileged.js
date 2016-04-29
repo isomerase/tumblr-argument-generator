@@ -1,5 +1,6 @@
 tumblr.resources.privileged = {
 	nouns: [
+	    '1-percenter'
 		'able-body',
 		'binary',
 		'cis',
