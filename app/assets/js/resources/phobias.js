@@ -10,7 +10,6 @@ tumblr.resources.phobias = tumblrPrePostfixer([
 	'homo',
 	'lesbo',
 	'male',
-	'otherkin',
 	'phallo',
 	'poly',
 	'queer',
