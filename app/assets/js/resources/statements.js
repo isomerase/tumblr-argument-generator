@@ -13,12 +13,10 @@ tumblr.resources.statementToldYouTo = [
 
 tumblr.resources.statements = [
 	['[acknowledge|check] your [fucking] {privileged.nouns} privilege!'],
-	['[currently|right now|today|this week|this month] i\'m [literally] [{alignments}|a {kins}], so [fucking] address me as "{joinedPronouns}" and not "{joinedPronouns}"!', true],
 	['[fuck|screw] [everything about] {concepts.terrible?2}!', false],
 	['[fuck|screw] your [fucking|goddamn|] {concepts.terrible}!', true],
 	['[fuck|screw] your {marginalized.verbs:2} of {marginalized.adjectives?3}{personalities}!', false],
 	['[people|{insults.adjectives} {insults.nouns#pluralize}] like you deserve to [fucking] die!', true],
-	['[{statementToldYouTo}] [accept|acknowledge|respect] that i\'m [literally] [{alignments}|a {kins}] [today|this week|this month]!', true],
 	['[{statementToldYouTo}] [accept|acknowledge|respect] that {concepts.terrible?3} is [incredibly] [fucking] [annoying|problematic]!', false],
 	['[{statementToldYouTo}] [accept|acknowledge|respect] that {concepts.terrible} keeps me from having any [fucking|goddamn|damn] rights!', true],
 	['[{statementToldYouTo}] [accept|acknowledge|respect] {triggers} is [literally] [a trigger for|triggering|incredibly triggering to] me!', false],
